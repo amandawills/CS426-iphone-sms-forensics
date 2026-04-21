@@ -36,22 +36,27 @@ System
 usr
 ```
 
-Environment
-Hardware
-MacBook or other desktop/laptop
-At least 8 GB RAM recommended
-At least 10–20 GB free storage
-Software
-macOS
-Homebrew
-DB Browser for SQLite
-Optional: Python 3
-Step 1: Install DB Browser for SQLite
+##Environment
+###Hardware
+-- MacBook or other desktop/laptop
+-- At least 8 GB RAM recommended
+-- At least 10–20 GB free storage
+
+###Software
+-- macOS
+-- Homebrew
+-- DB Browser for SQLite
+-- Optional: Python 3
+
+##Step 1: Install DB Browser for SQLite
 Install with Homebrew:
-brew install --cask db-browser-for-sqlite
+
+*brew install --cask db-browser-for-sqlite
+
 Open the application:
-open -a "DB Browser for SQLite"
-Step 2: Download the Dataset
+*open -a "DB Browser for SQLite"
+
+##Step 2: Download the Dataset
 Go to the NIST CFReDS Mobile Device Images page.
 Download the 2020 iOS – Magnet CTF dataset.
 Save it locally.
