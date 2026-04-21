@@ -202,3 +202,5 @@ Suggested structure for this project:
     └── project_notes.md
 Disclaimer
 This project uses a public forensic training dataset intended for educational and research purposes. Do not use private device data without proper authorization.
+Author
+Created as part of a digital forensics course project on iPhone SMS artifact analysis.
