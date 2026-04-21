@@ -36,22 +36,22 @@ System
 usr
 ```
 
-##Environment
-###Hardware
+## Environment
+### Hardware
 -- MacBook or other desktop/laptop
 -- At least 8 GB RAM recommended
 -- At least 10–20 GB free storage
 
-###Software
+### Software
 -- macOS
 -- Homebrew
 -- DB Browser for SQLite
 -- Optional: Python 3
 
-##Step 1: Install DB Browser for SQLite
+## Step 1: Install DB Browser for SQLite
 Install with Homebrew:
 
-*brew install --cask db-browser-for-sqlite
+* brew install --cask db-browser-for-sqlite
 
 Open the application:
 *open -a "DB Browser for SQLite"
