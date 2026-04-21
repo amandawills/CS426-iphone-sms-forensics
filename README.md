@@ -226,6 +226,7 @@ If expanding the project, you can also:
 
 ## Repository Structure
 Suggested structure for this project:
+```text
 .
 ├── README.md
 ├── queries/
@@ -237,7 +238,7 @@ Suggested structure for this project:
 │   └── query_results.png
 └── notes/
     └── project_notes.md
-
+```
 ## Disclaimer
 This project uses a public forensic training dataset intended for educational and research purposes. Do not use private device data without proper authorization.
 
