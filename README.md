@@ -34,7 +34,7 @@ Library
 private
 System
 usr
-text’’’
+’’’
 
 Environment
 Hardware
