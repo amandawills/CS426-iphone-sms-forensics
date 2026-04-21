@@ -189,6 +189,7 @@ To save query results:
 1. Run a query in the Execute SQL tab
 2. Export the results as CSV
 3. Save the file for reporting or visualization
+
 Suggested exports:
 - message timeline
 - sent vs. received counts
