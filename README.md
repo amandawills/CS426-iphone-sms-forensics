@@ -169,13 +169,19 @@ ORDER BY date
 LIMIT 10;
 ```
 ## Step 7: Interpret Key Fields
-* is_from_me
+```text
+is_from_me
+```
 - 1 = sent from the device
 - 0 = received by the device
 
-* handle.id
+```text
+handle.id
+```
 This typically represents the phone number or Apple ID associated with the conversation.
-* date
+```text
+date
+```
 Apple stores timestamps in a different format. The SQL conversion used above turns the raw value into a readable timestamp.
 
 ## Step 8: Export Results
