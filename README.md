@@ -68,7 +68,7 @@ After extraction, place the dataset in a convenient location, such as your Deskt
 
 Example:
 ```text
-* ~/Desktop/iOS_Filesystem
+~/Desktop/iOS_Filesystem
 ```
 
 ## Step 3: Locate the SMS Database
@@ -90,23 +90,28 @@ sms.db
 1. Launch DB Browser for SQLite
 2. Click Open Database
 3. Select the file:
-* /private/var/mobile/Library/SMS/sms.db
+```text
+/private/var/mobile/Library/SMS/sms.db
+```
 4. Open the Browse Data tab
 Relevant tables commonly include:
-- message
-- handle
-- chat
-- chat_message_join
+```text
+message
+handle
+chat
+chat_message_join
+```
 
 ## Step 5: Verify the Database Contents
 In Browse Data, choose the message table.
 
 Important fields may include:
-- text
-- date
-- handle_id
-- is_from_me
-
+```text
+text
+date
+handle_id
+is_from_me
+```
 These fields help identify:
 - message content
 - when the message was sent or received
@@ -117,6 +122,7 @@ These fields help identify:
 ### Query 1: Basic Timeline Reconstruction
 This query converts Apple's timestamp format into a readable datetime and links messages to contacts.
 
+```text
 SELECT
     datetime(message.date/1000000000 + 978307200,'unixepoch') AS date,
     message.text,
@@ -126,8 +132,11 @@ FROM message
 LEFT JOIN handle
 ON message.handle_id = handle.rowid
 ORDER BY message.date;
+```
 
 ### Query 2: Sent vs. Received Message Count
+
+```text
 SELECT
     CASE
         WHEN is_from_me = 1 THEN 'Sent'
@@ -136,8 +145,9 @@ SELECT
     COUNT(*) AS total_messages
 FROM message
 GROUP BY is_from_me;
-
+```
 ### Query 3: Most Frequent Contacts
+```text
 SELECT
     handle.id AS contact,
     COUNT(*) AS message_count
@@ -146,8 +156,9 @@ LEFT JOIN handle
 ON message.handle_id = handle.rowid
 GROUP BY handle.id
 ORDER BY message_count DESC;
-
+```
 ### Query 4: Sample Non-Empty Messages
+```text
 SELECT
     datetime(date/1000000000 + 978307200,'unixepoch') AS date,
     text
@@ -156,7 +167,7 @@ WHERE text IS NOT NULL
   AND text != ''
 ORDER BY date
 LIMIT 10;
-
+```
 ## Step 7: Interpret Key Fields
 * is_from_me
 - 1 = sent from the device
