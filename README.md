@@ -1,5 +1,3 @@
-# CS426-iphone-sms-forensics
-
 # Recovery and Analysis of iPhone SMS Messages from a Public Forensic Image
 
 This project demonstrates how to recover and analyze iPhone SMS/iMessage artifacts from a public forensic image using a macOS-friendly workflow. Instead of relying on Autopsy or FTK Imager, this guide uses **DB Browser for SQLite** to directly inspect the iPhone message database (`sms.db`).
@@ -51,10 +49,14 @@ usr
 ## Step 1: Install DB Browser for SQLite
 Install with Homebrew:
 
-* brew install --cask db-browser-for-sqlite
+```text
+brew install --cask db-browser-for-sqlite
+```
 
 Open the application:
-* open -a "DB Browser for SQLite"
+```text
+open -a "DB Browser for SQLite
+```
 
 ## Step 2: Download the Dataset
 1. Go to the NIST CFReDS Mobile Device Images page.
@@ -65,18 +67,25 @@ Open the application:
 After extraction, place the dataset in a convenient location, such as your Desktop.
 
 Example:
+```text
 * ~/Desktop/iOS_Filesystem
+```
 
 ## Step 3: Locate the SMS Database
 Inside the extracted iPhone file system, navigate to:
-* /private/var/mobile/Library/SMS/
+```text
+/private/var/mobile/Library/SMS/
+```
 You should find files similar to:
-- sms.db
-- sms.db-shm
-- sms.db-wal
+```text
+sms.db
+sms.db-shm
+sms.db-wal
+```
 The main forensic artifact used in this project is:
-- sms.db
-
+```text
+sms.db
+```
 ## Step 4: Open the Database
 1. Launch DB Browser for SQLite
 2. Click Open Database
